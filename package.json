@@ -1,0 +1,15 @@
+{
+  "name": "university-research-mcp",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "University Research MCP Server for AI agents - Generate institutional intelligence reports for tech transfer and VC workflows",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.6.0"
+  }
+}

@@ -1,0 +1,94 @@
+# university-research-mcp — Generate institutional reports, researcher profiles, patent landscapes, and funding analysis from 8 academic databases for university tech transfer and VC workflows.
+
+## What This MCP Does
+
+University Research MCP gives AI agents the ability to generate institutional intelligence reports on universities and research institutions. Used for tech transfer evaluation, VC due diligence, and academic partnership assessment. Queries 8 academic databases in parallel to produce structured reports with commercialization scoring (0-100) and investment verdicts.
+
+## MCP Tools
+
+### institution_report
+**Purpose:** Full intelligence brief on any university or research institution with commercialization scoring.
+**Input:** `{ institution: string (required), field?: string, department?: string }`
+**Output:** `{ institution, field, query, generatedAt, compositeScore: 0-100, verdict: ACQUIRE_NOW|PARTNER|MONITOR|TOO_EARLY|PASS, recommendations, allSignals, scoring: { commercializationReadiness, researchHotSpots, labIntelligence, techMaturity }, dataSources: { openalexPublications, openalexResearch, usPatents, epoPatents, nihGrants, federalGrants, researchers, arxivPreprints }, topPublications, topPatents, topGrants, topResearchers, topPreprints }`
+**When to call:** Tech transfer evaluation, VC due diligence, academic partnership assessment, investment research.
+**Example prompt:** "Generate an institutional report on MIT's quantum computing research including commercialization potential and top researchers."
+
+### researcher_profile
+**Purpose:** Top 10 researchers at an institution with metrics.
+**Input:** `{ institution: string (required), field?: string }`
+**Output:** `{ researchers: [{ name, orcid, works_count, cited_by_count, h_index, institution }] }`
+**When to call:** Academic partnership identification, talent mapping, scientific collaboration discovery.
+**Example prompt:** "Who are the top 10 researchers at Stanford working on machine learning?"
+
+### patent_landscape
+**Purpose:** Patent filings from USPTO and EPO for an institution or field.
+**Input:** `{ institution: string (required), field?: string }`
+**Output:** `{ institution, field, patents: [{ patent_number, title, filing_date, status, claims, technology_classification, inventors }] }`
+**When to call:** IP landscape analysis, technology due diligence, innovation tracking.
+**Example prompt:** "What patents does MIT have filed in the last 3 years related to AI and machine learning?"
+
+### funding_analysis
+**Purpose:** Grant funding breakdown by agency for an institution.
+**Input:** `{ institution: string (required), field?: string }`
+**Output:** `{ institution, field, grants: [{ agency, amount, title, pi, institution, start_year }], total_funding, agency_breakdown }`
+**When to call:** Research funding analysis, institutional financial health assessment, grant opportunity identification.
+**Example prompt:** "What NIH and NSF grants has Stanford received in 2024 for AI research?"
+
+### benchmark_institutions
+**Purpose:** Compare 2-5 institutions across all scoring dimensions.
+**Input:** `{ institutions: string[] (required, 2-5), field?: string }`
+**Output:** `{ comparisons: [{ institution, compositeScore, rank, scores, verdict }], recommended_actions }`
+**When to call:** Institution selection, competitive positioning, investment comparison.
+**Example prompt:** "Compare MIT, Stanford, and Caltech for quantum computing research programs."
+
+## Pricing
+
+| Event | Price |
+|-------|-------|
+| institution_report | $0.10 |
+| researcher_profile | $0.05 |
+| patent_landscape | $0.05 |
+| funding_analysis | $0.05 |
+| benchmark_institutions | $0.15 |
+| apify-actor-start | $0.00005 |
+
+## Data Sources
+
+- **OpenAlex** — 250M+ academic works, research institutions — used by institution_report, researcher_profile
+- **arXiv** — 2.4M+ STEM preprints — used by institution_report
+- **NIH Reporter** — US federal biomedical funding — used by institution_report, funding_analysis
+- **Grants.gov** — Federal grant opportunities — used by funding_analysis
+- **ORCID** — Researcher profiles — used by institution_report, researcher_profile
+- **USPTO** — US patent filings — used by patent_landscape (v2.0)
+- **EPO** — European patents — used by patent_landscape (v2.0)
+
+## Use Cases
+
+1. Corporate Development/M&A — Rank academic spinout targets by composite score
+2. Venture Capital — Evaluate founding labs for deep tech investments
+3. Technology Licensing — Find institutions with 30%+ conversion ratios
+4. Government Science Agencies — Map institutional strengths for grant allocation
+5. University Benchmarking — Compare commercialization performance vs. peers
+
+## Verdict System
+
+| Composite Score | Verdict |
+|-----------------|---------|
+| 75+ | ACQUIRE_NOW |
+| 55-74 | PARTNER |
+| 35-54 | MONITOR |
+| 15-34 | TOO_EARLY |
+| <15 | PASS |
+
+**Overrides:**
+- WORLD_CLASS lab + commercialization ≥60 → ACQUIRE_NOW
+- TRL ≥6 + weak lab <30 → MONITOR
+
+## Related MCPs
+
+- **academic-research-mcp** — General academic paper search, citations, author profiles, grants (different focus)
+- **company-intelligence-mcp** — Company enrichment and sanctions screening (complements university spinouts)
+
+## SEO Keywords
+
+university research MCP, institutional research report, university intelligence, tech transfer intelligence, patent landscape analysis, researcher profile API, academic commercialization, VC due diligence university, funding analysis MCP, NIH grants lookup, ORCID researcher search, benchmark institutions

@@ -1,0 +1,25 @@
+{
+  "actorSpecification": 1,
+  "name": "university-research-mcp",
+  "title": "University Research MCP",
+  "description": "Generate institutional reports, researcher profiles, patent landscapes, and funding analysis from 8 academic databases for university tech transfer and VC workflows.",
+  "version": "1.0",
+  "meta": {
+    "templateId": "standby-node"
+  },
+  "input": "../input_schema.json",
+  "readme": "../README.md",
+  "categories": [
+    "BUSINESS_INTELLIGENCE",
+    "SCIENCE_AND_RESEARCH"
+  ],
+  "pricing": {
+    "model": "EVENT"
+  },
+  "defaultRunOptions": {
+    "memoryMbytes": 512,
+    "timeoutSecs": 120
+  },
+  "usesStandbyMode": true,
+  "webServerMcpPath": "/mcp"
+}

@@ -1,0 +1,28 @@
+{
+  "title": "University Research MCP",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "tool": {
+      "title": "Tool Name",
+      "type": "string",
+      "description": "MCP tool to call",
+      "enum": [
+        "institution_report",
+        "researcher_profile",
+        "patent_landscape",
+        "funding_analysis",
+        "benchmark_institutions"
+      ],
+      "editor": "select",
+      "prefill": "institution_report"
+    },
+    "params": {
+      "title": "Parameters (JSON)",
+      "type": "object",
+      "description": "Tool parameters as JSON object",
+      "editor": "json",
+      "prefill": {"institution": "MIT", "field": "quantum computing"}
+    }
+  }
+}
