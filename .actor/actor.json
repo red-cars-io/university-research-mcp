@@ -14,7 +14,7 @@
     "SCIENCE_AND_RESEARCH"
   ],
   "pricing": {
-    "model": "EVENT"
+    "model": "PAY_PER_EVENT"
   },
   "defaultRunOptions": {
     "memoryMbytes": 512,
