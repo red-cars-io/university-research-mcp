@@ -184,3 +184,9 @@ University tech transfer offices, VC analysts, and corporate development teams n
 - **Apify:** https://apify.com/university-research-mcp
 - **GitHub:** https://github.com/red-cars-io/university-research-mcp
 - **MCP Endpoint:** `https://university-research-mcp.apify.actor/mcp`
+
+---
+
+## SEO Keywords
+
+tech transfer MCP, university intelligence, TRL assessment, commercialization scoring, institutional research report, patent landscape, researcher profile API, NIH grants lookup, ORCID search, no API key needed, AI agent, MCP server, VC due diligence university, academic spinout evaluation

@@ -1,45 +1,42 @@
-# university-research-mcp — Generate institutional reports, researcher profiles, patent landscapes, and funding analysis from 8 academic databases for university tech transfer and VC workflows.
+# University Research MCP Server
+
+Generate institutional reports, researcher profiles, patent landscapes, and funding analysis from 8 academic databases for university tech transfer and VC workflows. No API key required.
 
 ## What This MCP Does
 
-University Research MCP gives AI agents the ability to generate institutional intelligence reports on universities and research institutions. Used for tech transfer evaluation, VC due diligence, and academic partnership assessment. Queries 8 academic databases in parallel to produce structured reports with commercialization scoring (0-100) and investment verdicts.
+The University Research MCP server wraps five academic research capabilities into one unified interface:
+- **institution_report** — Full intelligence brief on any university or research institution with commercialization scoring (0-100) and investment verdict (ACQUIRE_NOW | PARTNER | MONITOR | TOO_EARLY | PASS)
+- **researcher_profile** — Top 10 researchers at an institution with publication counts, citation metrics, and ORCID data
+- **patent_landscape** — Patent filings from USPTO and EPO with filing status, claims, and technology classification
+- **funding_analysis** — Grant breakdown by agency (NIH, NSF, DOD) with funding amounts and project descriptions
+- **benchmark_institutions** — Compare 2-5 institutions across all scoring dimensions
 
 ## MCP Tools
 
 ### institution_report
-**Purpose:** Full intelligence brief on any university or research institution with commercialization scoring.
-**Input:** `{ institution: string (required), field?: string, department?: string }`
-**Output:** `{ institution, field, query, generatedAt, compositeScore: 0-100, verdict: ACQUIRE_NOW|PARTNER|MONITOR|TOO_EARLY|PASS, recommendations, allSignals, scoring: { commercializationReadiness, researchHotSpots, labIntelligence, techMaturity }, dataSources: { openalexPublications, openalexResearch, usPatents, epoPatents, nihGrants, federalGrants, researchers, arxivPreprints }, topPublications, topPatents, topGrants, topResearchers, topPreprints }`
-**When to call:** Tech transfer evaluation, VC due diligence, academic partnership assessment, investment research.
-**Example prompt:** "Generate an institutional report on MIT's quantum computing research including commercialization potential and top researchers."
+**Purpose:** Full intelligence brief on any university or research institution with commercialization scoring (0-100) and investment verdict.
+**When to call:** Persona: Tech transfer manager or VC analyst. Scenario: Evaluating a university's commercialization potential for partnership or investment.
+**Example AI prompt:** "Generate an institutional report on MIT's quantum computing research including commercialization potential, top researchers, and investment verdict."
 
 ### researcher_profile
-**Purpose:** Top 10 researchers at an institution with metrics.
-**Input:** `{ institution: string (required), field?: string }`
-**Output:** `{ researchers: [{ name, orcid, works_count, cited_by_count, h_index, institution }] }`
-**When to call:** Academic partnership identification, talent mapping, scientific collaboration discovery.
-**Example prompt:** "Who are the top 10 researchers at Stanford working on machine learning?"
+**Purpose:** Top 10 researchers at an institution with publication counts, citation metrics, and ORCID data.
+**When to call:** Persona: Talent scout or partnership manager. Scenario: Identifying top researchers at a specific university for collaboration or recruitment.
+**Example AI prompt:** "Who are the top 10 researchers at Stanford working on machine learning? Show their h-index and publication counts."
 
 ### patent_landscape
-**Purpose:** Patent filings from USPTO and EPO for an institution or field.
-**Input:** `{ institution: string (required), field?: string }`
-**Output:** `{ institution, field, patents: [{ patent_number, title, filing_date, status, claims, technology_classification, inventors }] }`
-**When to call:** IP landscape analysis, technology due diligence, innovation tracking.
-**Example prompt:** "What patents does MIT have filed in the last 3 years related to AI and machine learning?"
+**Purpose:** Patent filings from USPTO and EPO with filing status, claims, technology classification, and inventors.
+**When to call:** Persona: IP strategist or tech transfer analyst. Scenario: Analyzing the patent activity of a university to assess innovation strength and licensing opportunities.
+**Example AI prompt:** "What patents does MIT have filed in the last 3 years related to AI and machine learning? Show top 20 by filing date."
 
 ### funding_analysis
-**Purpose:** Grant funding breakdown by agency for an institution.
-**Input:** `{ institution: string (required), field?: string }`
-**Output:** `{ institution, field, grants: [{ agency, amount, title, pi, institution, start_year }], total_funding, agency_breakdown }`
-**When to call:** Research funding analysis, institutional financial health assessment, grant opportunity identification.
-**Example prompt:** "What NIH and NSF grants has Stanford received in 2024 for AI research?"
+**Purpose:** Grant funding breakdown by agency for an institution with funding amounts, PIs, and project descriptions.
+**When to call:** Persona: Research administrator or government science officer. Scenario: Understanding funding landscape for a university to inform grant strategy or partnership.
+**Example AI prompt:** "What NIH and NSF grants has Stanford received in 2024 for AI research? Show agency breakdown and total funding."
 
 ### benchmark_institutions
-**Purpose:** Compare 2-5 institutions across all scoring dimensions.
-**Input:** `{ institutions: string[] (required, 2-5), field?: string }`
-**Output:** `{ comparisons: [{ institution, compositeScore, rank, scores, verdict }], recommended_actions }`
-**When to call:** Institution selection, competitive positioning, investment comparison.
-**Example prompt:** "Compare MIT, Stanford, and Caltech for quantum computing research programs."
+**Purpose:** Compare 2-5 institutions across all scoring dimensions including commercialization readiness, research hotspots, lab intelligence, and tech maturity.
+**When to call:** Persona: Investment committee or strategic planner. Scenario: Comparing multiple universities for site selection, partnership, or investment decisions.
+**Example AI prompt:** "Compare MIT, Stanford, and Caltech for quantum computing research programs — show composite scores and rankings across all dimensions."
 
 ## Pricing
 
@@ -91,4 +88,4 @@ University Research MCP gives AI agents the ability to generate institutional in
 
 ## SEO Keywords
 
-university research MCP, institutional research report, university intelligence, tech transfer intelligence, patent landscape analysis, researcher profile API, academic commercialization, VC due diligence university, funding analysis MCP, NIH grants lookup, ORCID researcher search, benchmark institutions
+university research MCP, institutional research report, university intelligence, tech transfer intelligence, patent landscape analysis, researcher profile API, academic commercialization, VC due diligence university, funding analysis MCP, NIH grants lookup, ORCID researcher search, benchmark institutions, no API key needed, AI agent, MCP server, tech transfer automation
