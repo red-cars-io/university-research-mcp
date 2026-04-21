@@ -106,6 +106,30 @@ University tech transfer offices, VC analysts, and corporate development teams n
 - **Grants.gov** — Federal grant opportunities
 - **ORCID** — Researcher profiles
 
+## How It Compares to PitchBook and Crunchbase
+
+| Aspect | Our MCP | PitchBook | Crunchbase |
+|--------|---------|-----------|------------|
+| Price | $0.05-$0.15/call | $20k+/year | Limited API (expensive) |
+| Access method | MCP (AI-native) | Web dashboard | Web + REST API |
+| University coverage | 250M+ academic works | Limited academic data | Limited academic data |
+| Free tier | Yes | No | Limited |
+| Setup time | 5 minutes | Weeks (enterprise sales) | Days |
+
+**Why choose our MCP:**
+- MCP protocol is designed for AI agent integration - generate institutional reports with natural language
+- University tech transfer focus - commercialization scoring, patent landscapes, grant funding, researcher profiles
+- Data from OpenAlex, arXiv, USPTO, EPO, NIH, Grants.gov, ORCID - academic sources not covered by PitchBook/Crunchbase
+- Composite scores and verdicts (ACQUIRE_NOW, PARTNER, MONITOR, TOO_EARLY, PASS) for quick decision-making
+- Benchmark up to 5 institutions side-by-side
+- No enterprise contract required - start using in minutes
+
+**PitchBook alternative:** https://pitchbook.com/
+
+**Crunchbase alternative:** https://crunchbase.com/
+
+---
+
 ## Pricing (Pay-Per-Event)
 
 | Event | Price |
