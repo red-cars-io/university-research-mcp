@@ -15,6 +15,10 @@ The University Research MCP server wraps five academic research capabilities int
 
 University tech transfer offices, VC analysts, and corporate development teams need structured research intelligence on academic institutions. University Research MCP aggregates OpenAlex, arXiv, USPTO, EPO, NIH Reporter, Grants.gov, and ORCID into one call — what would otherwise require 8 separate API integrations and weeks of normalization work.
 
+## Comparison
+
+See how University Research MCP compares to alternatives: [COMPARISON.md](./COMPARISON.md)
+
 ## Quick Start
 
 1. Connect via MCP protocol to `mcp.apify.com`
@@ -210,6 +214,8 @@ University tech transfer offices, VC analysts, and corporate development teams n
 - **MCP Endpoint:** `https://university-research-mcp.apify.actor/mcp`
 
 ---
+
+- [Comparison: vs ireseaerchnin, Elsevier](COMPARISON.md)
 
 ## SEO Keywords
 
