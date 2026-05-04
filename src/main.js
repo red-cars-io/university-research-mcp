@@ -727,7 +727,7 @@ if (isStandby) {
 
 // Export handleRequest for MCP gateway compatibility
 export default {
-    handleRequest: async ({ request, response, log }) => {
+    handleRequest: async ({ request, log }) => {
         log.info("University Research MCP received request");
 
         try {
@@ -738,16 +738,10 @@ export default {
 
             const result = await handleTool(tool, params);
 
-            await response.send({
-                status: "success",
-                result
-            });
+            return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
         } catch (error) {
             log.error(`Error: ${error.message}`);
-            await response.send({
-                status: "error",
-                error: error.message
-            });
+            return { content: [{ type: 'text', text: JSON.stringify({ status: "error", error: error.message }, null, 2) }] };
         }
     }
 };
